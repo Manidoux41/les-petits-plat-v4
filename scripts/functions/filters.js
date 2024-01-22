@@ -10,8 +10,13 @@ for(let i = 0; i < chevron.length; i++) {
 
         if(parentElement.classList.contains('active')) {
             let newDiv = document.createElement('div');
-            newDiv.textContent = 'test';
             newDiv.classList.add('newDiv')
+            newDiv.innerHTML = `
+                <input type="text" placeholder="Rechercher une recette, ...">
+                <ul>
+                    <li>Tarte aux fraise</li>
+                </ul>
+            `;
             parentElement.appendChild(newDiv);
         } else {
             let newDiv = parentElement.querySelector('.newDiv');
