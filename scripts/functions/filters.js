@@ -12,7 +12,10 @@ for(let i = 0; i < chevron.length; i++) {
             let newDiv = document.createElement('div');
             newDiv.classList.add('newDiv')
             newDiv.innerHTML = `
-                <input type="text" placeholder="Rechercher une recette, ...">
+                <div class="input-search-categories">
+                    <input type="text" aria-label="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
                 <ul>
                     <li>Tarte aux fraise</li>
                 </ul>
