@@ -18,6 +18,7 @@ for (let i = 0; i < chevron.length; i++) {
                 </div>
                 <ul>
                     <li>Tarte aux fraise</li>
+                    <li>Tarte aux fraise</li>
                 </ul>
             `;
             parentElement.appendChild(newDiv);
