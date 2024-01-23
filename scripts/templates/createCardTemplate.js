@@ -1,13 +1,14 @@
 export function createCardTemplate(recipe) {
 
-    const { name, ingredients,  description } = recipe;
+    const { name, time, image, ingredients, description } = recipe;
 
     const results = document.querySelector('#results');
     const card = document.createElement('article');
     card.classList.add('card');
     card.innerHTML = `
     <div class="card__image-container">
-        
+        <img src="../assets/images/${image}" alt="${name}" class="card__image" loading="lazy">
+        <div class="card__image-gradient">${time} min</div>
     </div>
     <div class="card__info-container">
         <h3 class="card__title">${name}</h3>
