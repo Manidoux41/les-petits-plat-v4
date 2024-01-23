@@ -2,13 +2,13 @@ const chevron = document.querySelectorAll('.down-chevron');
 
 console.log(chevron);
 
-for(let i = 0; i < chevron.length; i++) {
+for (let i = 0; i < chevron.length; i++) {
     chevron[i].addEventListener('click', () => {
         const parentElement = chevron[i].parentElement;
         parentElement.classList.toggle('active');
         console.log(parentElement);
 
-        if(parentElement.classList.contains('active')) {
+        if (parentElement.classList.contains('active')) {
             let newDiv = document.createElement('div');
             newDiv.classList.add('newDiv')
             newDiv.innerHTML = `
@@ -23,10 +23,8 @@ for(let i = 0; i < chevron.length; i++) {
             parentElement.appendChild(newDiv);
         } else {
             let newDiv = parentElement.querySelector('.newDiv');
-            if(newDiv) parentElement.removeChild(newDiv);
+            if (newDiv) parentElement.removeChild(newDiv);
         }
     });
-
-       
 }
 
