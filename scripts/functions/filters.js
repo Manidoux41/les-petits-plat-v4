@@ -1,3 +1,5 @@
+import { getCategories } from "../functions/getCategories.js";
+import { recipes } from "../datas/recipes.js";
 
     const chevron = document.querySelectorAll('.down-chevron');
 
@@ -16,8 +18,7 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <ul>
-                        <li>Tarte aux fraise</li>
-                        <li>Tarte aux fraise</li>
+                        ${getCategories(recipes)[parentElement.querySelector('.filter__title').classList[1]].map(item => `<li>${item}</li>`).join('')}
                     </ul>
                 `;
                 parentElement.appendChild(newDiv);
