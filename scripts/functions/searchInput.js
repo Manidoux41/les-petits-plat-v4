@@ -23,6 +23,12 @@ export function searchInput(value) {
     }
 }   
 
+/**
+ * Filters categories based on the input value.
+ *
+ * @param {string} value - the input value to filter categories
+ * @return {array} filtered categories based on the input value
+ */
 export function searchInputFilterCategories(value) {
     
 }
