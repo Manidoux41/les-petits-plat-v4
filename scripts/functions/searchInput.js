@@ -1,3 +1,5 @@
+import { getRecipes } from "./getRecipes.js";
+
 export function searchInput(value) {
     if (value !== '') {
         const articles = document.querySelectorAll('.card');
@@ -8,5 +10,9 @@ export function searchInput(value) {
                 results.appendChild(article);
             }
         });
+    } else {
+        const results = document.querySelector('#results');
+        results.innerHTML = '';
+        getRecipes();
     }
 }   
