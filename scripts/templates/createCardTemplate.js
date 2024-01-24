@@ -1,3 +1,9 @@
+/**
+ * Creates a card template for the given recipe and appends it to the results element.
+ *
+ * @param {Object} recipe - The recipe object containing name, time, image, ingredients, and description
+ * @return {void} 
+ */
 export function createCardTemplate(recipe) {
 
     const { name, time, image, ingredients, description } = recipe;
