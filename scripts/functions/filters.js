@@ -7,7 +7,7 @@ import { recipes } from "../datas/recipes.js";
         chevron[i].addEventListener('click', () => {
             const parentElement = chevron[i].parentElement;
             parentElement.classList.toggle('active');
-            console.log(parentElement);
+            //console.log(parentElement);
 
             if (parentElement.classList.contains('active')) {
                 let newDiv = document.createElement('div');
@@ -18,7 +18,7 @@ import { recipes } from "../datas/recipes.js";
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <ul>
-                        ${getCategories(recipes)[parentElement.querySelector('.filter__title').classList[1]].map(item => `<li>${item}</li>`).join('')}
+                        ${getCategories(recipes)[parentElement.querySelector('.filter__title').classList[1]].map(item => `<li class="filter-selected__itemList">${item}</li>`).join('')}
                     </ul>
                 `;
                 parentElement.appendChild(newDiv);
