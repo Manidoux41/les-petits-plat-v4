@@ -1,3 +1,9 @@
+/**
+ * Retrieves unique categories from the given list of recipes.
+ *
+ * @param {Array} recipes - The list of recipes to extract categories from.
+ * @return {Object} An object containing sorted lists of ingredients, appliances, and ustensils.
+ */
 export function getCategories(recipes) {
     let ingredients = [];
     let appliances = [];

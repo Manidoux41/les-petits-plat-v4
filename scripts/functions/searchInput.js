@@ -1,5 +1,11 @@
 import { getRecipes } from "./getRecipes.js";
 
+/**
+ * Searches for input value within articles and displays the matching results.
+ *
+ * @param {string} value - the input value to search for
+ * @return {void} 
+ */
 export function searchInput(value) {
     if (value !== '') {
         const articles = document.querySelectorAll('.card');
@@ -16,3 +22,7 @@ export function searchInput(value) {
         getRecipes();
     }
 }   
+
+export function searchInputFilterCategories(value) {
+    
+}
