@@ -13,7 +13,7 @@ export function createCardTemplate(recipe) {
     card.classList.add('card');
     card.innerHTML = `
     <div class="card__image-container">
-        <img src="../assets/images/${image}" alt="${name}" class="card__image" loading="lazy" />
+        <img src="../assets/images/${image}" alt="${name}" class="card__image" loading="lazy">
         <div class="card__image-gradient">${time} min</div>
     </div>
     <div class="card__info-container">
