@@ -17,11 +17,19 @@ export function createCategoriesTemplate(categories) {
         filtersCategories.appendChild(newDiv); // append the new div to the filtersCategories
 
 
-       newDiv.querySelector('.down-chevron').addEventListener('click', function() {
+        newDiv.querySelector('.down-chevron').addEventListener('click', function() {
             this.parentElement.classList.toggle('active');
             if (this.parentElement.classList.contains('active')) {
                 let categoryList = categories[category];
                 let uniqueCategoryList = [...new Set(categoryList)].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
+                let input = document.createElement('div');
+                input.classList.add('input-search-categories');
+                input.innerHTML = `
+                    <input type="text" aria-label="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                `;
+                this.parentElement.appendChild(input);
                 let listContainer = document.createElement('ul');
                 uniqueCategoryList.forEach(item => {
                     let listItem = document.createElement('li');
@@ -31,7 +39,9 @@ export function createCategoriesTemplate(categories) {
                 this.parentElement.appendChild(listContainer);
             } else {
                 let listContainer = this.parentElement.querySelector('ul');
-                if (listContainer) {
+                let input = this.parentElement.querySelector('.input-search-categories');
+                if (listContainer && input) {
+                    this.parentElement.removeChild(input);
                     this.parentElement.removeChild(listContainer);
                 }
             }

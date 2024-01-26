@@ -8,7 +8,6 @@ import {recipes} from "../datas/recipes.js"
  */
 export function getCategories() {
     
-    
         let ingredients = [];
         let appliances = [];
         let ustensils = [];
