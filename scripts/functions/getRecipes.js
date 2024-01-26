@@ -9,6 +9,7 @@ import { createCardTemplate } from "../templates/createCardTemplate.js";
 export function getRecipes () {
     const dataRecipes = recipes;
     dataRecipes.forEach(recipe => {
+        console.log(recipe);
         createCardTemplate(recipe);
     });
     

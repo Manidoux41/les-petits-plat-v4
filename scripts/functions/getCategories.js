@@ -42,6 +42,7 @@ export function getCategories() {
         });
     
         categoriesArray.forEach(category => {
+            console.log(category);
             createCategoriesTemplate(category);
         });
 }

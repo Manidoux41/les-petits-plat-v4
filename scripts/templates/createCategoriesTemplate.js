@@ -28,7 +28,7 @@ export function createCategoriesTemplate(categories) {
                 let input = document.createElement('div');
                 input.classList.add('input-search-categories');
                 input.innerHTML = `
-                    <input type="text" aria-label="search">
+                    <input type="text" aria-label="search" id="input-search-categories">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 `;
                 this.parentElement.appendChild(input);
