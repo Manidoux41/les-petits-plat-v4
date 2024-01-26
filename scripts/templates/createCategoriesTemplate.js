@@ -1,7 +1,7 @@
 
-export function createCategoriesTemplate (categories) {
+export function createCategoriesTemplate(categories) {
 
-    
+
     const filtersCategories = document.querySelector('.filters-categories'); // select the filtersCategories
 
 
@@ -16,16 +16,27 @@ export function createCategoriesTemplate (categories) {
         `;
         filtersCategories.appendChild(newDiv); // append the new div to the filtersCategories
 
-        const newUl = document.createElement('ul'); // create a new ul
-        newUl.classList.add('filter__list'); // add the class to the new ul
-        newDiv.appendChild(newUl); // append the new ul to the new div
 
-        categories[category].forEach(item => { // for each item in the category
-            const newItem = document.createElement('li'); // create a new li
-            newItem.classList.add('filter-selected__itemList'); // add the class to the new li
-            newItem.innerHTML = `${item}`; // add the item to the new li
-            newUl.appendChild(newItem); // append the new li to the new ul
+       newDiv.querySelector('.down-chevron').addEventListener('click', function() {
+            this.parentElement.classList.toggle('active');
+            if (this.parentElement.classList.contains('active')) {
+                let categoryList = categories[category];
+                let uniqueCategoryList = [...new Set(categoryList)].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+                let listContainer = document.createElement('ul');
+                uniqueCategoryList.forEach(item => {
+                    let listItem = document.createElement('li');
+                    listItem.textContent = item;
+                    listContainer.appendChild(listItem);
+                });
+                this.parentElement.appendChild(listContainer);
+            } else {
+                let listContainer = this.parentElement.querySelector('ul');
+                if (listContainer) {
+                    this.parentElement.removeChild(listContainer);
+                }
+            }
         });
-
-    }
+    };
 }
+
+
