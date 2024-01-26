@@ -9,7 +9,9 @@ export function createCategoriesTemplate(categories) {
         const newDiv = document.createElement('div'); // create a new div
         newDiv.classList.add('filters-categories__' + category); // add the class to the new div
         newDiv.innerHTML = `
-            <h2 class="filter__title ${category}">${category}</h2>
+            <h2 class="filter__title ${category}">
+                ${(category === 'ingredients') ? 'Ingrédients' : (category === 'appliances') ? 'Appareils' : 'Ustensiles'}
+            </h2>
             <span class="down-chevron">
                 <i class="fa-solid fa-chevron-up"></i>
             </span>
