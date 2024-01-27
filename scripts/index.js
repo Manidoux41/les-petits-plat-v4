@@ -1,5 +1,6 @@
 import { getCategories } from "./functions/getCategories.js";
 import { getRecipes } from "./functions/getRecipes.js"; 
+import { saveToLS } from "./functions/savetoLS.js";
 import { searchInput} from "./functions/searchInput.js";
 
 const inputSearch = document.getElementById('search__input');
@@ -65,6 +66,7 @@ inputSearch.addEventListener('input', (e) => {
 function init () {
     getRecipes();
     getCategories();
+    saveToLS();
 }
 
 init();
