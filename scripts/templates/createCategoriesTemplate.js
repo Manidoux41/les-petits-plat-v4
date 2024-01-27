@@ -41,18 +41,7 @@ export function createCategoriesTemplate(categories) {
                 });
                 this.parentElement.appendChild(listContainer);
 
-                if (this.parentElement.classList.contains('active')) {
-                    let listItem = this.parentElement.querySelectorAll('.filter-selected__itemList');
-                    listItem.forEach(element => {
-                        element.addEventListener('click', () => {
-                            element.classList.toggle('selected');
-
-                            if(element.classList.contains('selected')) {
-                                console.log(element.textContent);
-                            } 
-                        });
-                    });
-                }
+                
 
             } else {
                 let listContainer = this.parentElement.querySelector('ul');
