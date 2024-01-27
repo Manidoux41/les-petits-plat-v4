@@ -60,6 +60,8 @@ inputSearch.addEventListener('input', (e) => {
 });
 
 
+
+
 function init () {
     getRecipes();
     getCategories();

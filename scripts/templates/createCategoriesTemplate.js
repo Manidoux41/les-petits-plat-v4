@@ -34,11 +34,26 @@ export function createCategoriesTemplate(categories) {
                 this.parentElement.appendChild(input);
                 let listContainer = document.createElement('ul');
                 uniqueCategoryList.forEach(item => {
-                    let listItem = document.createElement('li');
+                    let listItem = document.createElement('li')
+                    listItem.classList.add('filter-selected__itemList');
                     listItem.textContent = item;
                     listContainer.appendChild(listItem);
                 });
                 this.parentElement.appendChild(listContainer);
+
+                if (this.parentElement.classList.contains('active')) {
+                    let listItem = this.parentElement.querySelectorAll('.filter-selected__itemList');
+                    listItem.forEach(element => {
+                        element.addEventListener('click', () => {
+                            element.classList.toggle('selected');
+
+                            if(element.classList.contains('selected')) {
+                                console.log(element.textContent);
+                            } 
+                        });
+                    });
+                }
+
             } else {
                 let listContainer = this.parentElement.querySelector('ul');
                 let input = this.parentElement.querySelector('.input-search-categories');
@@ -49,6 +64,9 @@ export function createCategoriesTemplate(categories) {
             }
         });
     };
+
+  
+   
 }
 
 
